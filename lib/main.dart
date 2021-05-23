@@ -123,7 +123,7 @@ class TimerHomePage extends StatelessWidget {
                   ),
                   Expanded(
                       child: ProductivityButton(
-                          color: Color(0xff212121),
+                          color: Colors.red,
                           text: 'Stop',
                           onPressed: () => timer.stopTimer())),
                   Padding(

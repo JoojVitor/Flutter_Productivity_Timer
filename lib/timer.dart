@@ -1,6 +1,7 @@
 import 'dart:async';
 import './timermodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
 class CountDownTimer {
   double _radius = 1;
@@ -39,6 +40,8 @@ class CountDownTimer {
         if (_time.inSeconds <= 0) {
           //caso o timer seja zerado, seu estado mudará para inativo.
           _isActive = false;
+          //quando acabar o tempo do timer, toca o som de notificação.
+          FlutterRingtonePlayer.playNotification(volume: 100);
         }
       }
       time = returnTime(_time);
